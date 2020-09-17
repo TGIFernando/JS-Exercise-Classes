@@ -47,7 +47,11 @@ class Person {
         this.stomach = [];
     }
     eat(food) {
-        this.stomach.push(food);
+        if (this.stomach.length < 10) {
+            this.stomach.push(food);
+        } else {
+            return `I cant eat anymore`;
+        }
     }
     poop() {
         this.stomach = [];
@@ -130,8 +134,19 @@ class Lambdasian {
         + `demo` receives a `subject` string as an argument and returns the phrase 'Today we are learning about {subject}' where subject is the param passed in.
         + `grade` receives a `student` object and a `subject` string as arguments and returns '{student.name} receives a perfect score on {subject}'
 */
-class Instructor {
-
+class Instructor extends Lambdasian {
+    constructor(augment) {
+        super(augment)
+        this.specialty = augment.specialty;
+        this.favLanguage = augment.favLanguage;
+        this.catchPhrase = augment.catchPhrase;
+    }
+    demo(subject) {
+        return `Today we are learning about ${subject}`
+    }
+    grade(student, subject) {
+        return `${student.name} receives a perfect score on ${subject}`
+    }
 }
 
 /*
