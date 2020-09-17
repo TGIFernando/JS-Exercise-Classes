@@ -196,7 +196,13 @@ class ProjectManager extends Instructor {
     constructor(obj) {
         super(obj);
         this.gradClassName = obj.gradClassName
-        this.favInstructor
+        this.favInstructor = obj.favInstructor
+    }
+    standUp(channel) {
+        return `${this.name} announces to ${channel}, @channel standy times!`
+    }
+    debugsCode(student, subject) {
+        return `${this.name} debugs ${student.name}'s code on ${subject}`
     }
 }
 
